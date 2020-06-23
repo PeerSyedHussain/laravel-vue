@@ -2,6 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import Form from './core/Form';
 import Example from './components/Example';
+import Notification from './components/Notification.vue'
 
 window.axios = axios;                                       //global declaration for using in various files,to avoid import in all files
 
@@ -11,7 +12,7 @@ new Vue({
     el : '#app',
 
     components : {
-        Example    
+        Example,Notification
     },
 
     data : {

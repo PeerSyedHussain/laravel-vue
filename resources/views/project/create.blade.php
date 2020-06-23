@@ -30,6 +30,7 @@
                 <button type="submit" class="btn btn-primary" :disabled="form.errors.any()">Submit</button>
             </form>
             <example></example>
+            <notification></notification>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>

@@ -1,3 +1,3 @@
 export default {
-    template : '<h1>hi</h1>'
+    template : '<h1>corona</h1>'
 };
