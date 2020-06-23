@@ -15217,7 +15217,7 @@ var store_user_name = {
   // we can use this as global store variables or we can use any modules or any (continue on next line)
   // components then import it and use here...this is used for "shared state 1-1"
   user: {
-    name: 'hussain'
+    name: 'niki'
   }
 };
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
