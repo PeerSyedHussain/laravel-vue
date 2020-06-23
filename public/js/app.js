@@ -15213,6 +15213,13 @@ window.axios = axios__WEBPACK_IMPORTED_MODULE_1___default.a; //global declaratio
 
 window.Form = _core_Form__WEBPACK_IMPORTED_MODULE_2__["default"]; //global declaration for using in various files,to avoid import in all files
 
+var store_user_name = {
+  // we can use this as global store variables or we can use any modules or any (continue on next line)
+  // components then import it and use here...this is used for "shared state 1-1"
+  user: {
+    name: 'hussain'
+  }
+};
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
@@ -15225,7 +15232,11 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       //created a new form instance class with passing form data...
       name: '',
       description: ''
-    })
+    }),
+    foo: 'bar',
+    //for 24th episode this is declared as unique object data as foo    [it cannot share data]
+    store_user_name: store_user_name //for 24th episode this is declared as same object data as store_user_name [it can share data]
+
   },
   mounted: function mounted() {},
   methods: {
@@ -15240,6 +15251,15 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         console.log(error); //to show the error message to the user
       });
     }
+  }
+});
+new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#dummy',
+  data: {
+    foo: 'otherbar',
+    //for 24th episode this is declared as unique object data as foo    [it cannot share data]
+    store_user_name: store_user_name //for 24th episode this is declared as same object data as store_user_name [it can share data]
+
   }
 });
 
