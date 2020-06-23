@@ -30,11 +30,21 @@
                 <button type="submit" class="btn btn-primary" :disabled="form.errors.any()">Submit</button>
             </form>
             <example></example>
+            <hr/>
             <notification></notification>
+            <hr/>
             <h1>
                 @{{ foo}}
                 @{{ store_user_name.user.name}}
             </h1>
+            <hr/>
+            <!-- Below this 2 lines are same two way binding works,but different method -->
+            <input type='text' v-model='coupon'/>           
+            <input type='text' @keyDown="coupon = $event.target.value" :value="coupon">   
+
+            <coupon v-model="coupon"></coupon>      
+            <hr/>
+
         </div>
         <div id='dummy'>
             <h1>

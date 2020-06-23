@@ -3,6 +3,7 @@ import axios from 'axios';
 import Form from './core/Form';
 import Example from './components/Example';
 import Notification from './components/Notification.vue'
+import Coupon from './components/Coupon.vue';
 
 window.axios = axios;                                       //global declaration for using in various files,to avoid import in all files
 
@@ -19,7 +20,7 @@ new Vue({
     el : '#app',
 
     components : {
-        Example,Notification
+        Example,Notification,Coupon
     },
 
     data : {
@@ -29,7 +30,8 @@ new Vue({
             description : '',
         }),
         foo : 'bar',                                        //for 24th episode this is declared as unique object data as foo    [it cannot share data]
-        store_user_name                                     //for 24th episode this is declared as same object data as store_user_name [it can share data]
+        store_user_name,
+        coupon :   'HSJS123'                              //for 24th episode this is declared as same object data as store_user_name [it can share data]
     },
     mounted(){
         
