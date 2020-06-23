@@ -8,6 +8,13 @@ window.axios = axios;                                       //global declaration
 
 window.Form = Form;                                         //global declaration for using in various files,to avoid import in all files
 
+let store_user_name = {                                     // we can use this as global store variables or we can use any modules or any (continue on next line)
+                                                            // components then import it and use here...this is used for "shared state 1-1"
+    user : {
+        name : 'hussain',
+    }
+}
+
 new Vue({
     el : '#app',
 
@@ -20,7 +27,9 @@ new Vue({
         form : new Form({                                   //created a new form instance class with passing form data...
             name : '',
             description : '',
-        })
+        }),
+        foo : 'bar',                                        //for 24th episode this is declared as unique object data as foo    [it cannot share data]
+        store_user_name                                     //for 24th episode this is declared as same object data as store_user_name [it can share data]
     },
     mounted(){
         
@@ -36,5 +45,14 @@ new Vue({
                     console.log(error)                      //to show the error message to the user
                 })
         },
+    }
+})
+
+new Vue({
+    el : '#dummy',
+
+    data: {
+        foo : 'otherbar',                                   //for 24th episode this is declared as unique object data as foo    [it cannot share data]
+        store_user_name                                     //for 24th episode this is declared as same object data as store_user_name [it can share data]
     }
 })
