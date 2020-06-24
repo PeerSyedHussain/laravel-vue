@@ -21,9 +21,9 @@ Route::get('skills',function(){
     return ['Javascript','React js','Vue Js','Laravel'];
 });
 
-// Route::get('/statuses',function(){
-
-// })
+Route::get('/statuses',function(){
+    return App\Status::with('user')->latest()->get();
+});
 
 Route::resource('/project','\\App\\Http\\Controllers\\ProjectController');
 // Route::get('/project/create','\\App\\Http\\Controllers\\ProjectController@create');
