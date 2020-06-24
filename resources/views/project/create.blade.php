@@ -12,7 +12,7 @@
     </head>
     <body>
         <div id='app' class='container'>
-            
+
             <h2>Project</h2>
 
             <form method="post" action="{{ route('project.store')}}" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
@@ -30,16 +30,26 @@
                 <button type="submit" class="btn btn-primary" :disabled="form.errors.any()">Submit</button>
             </form>
             <example></example>
+            <hr/>
             <notification></notification>
+            <hr/>
             <h1>
                 @{{ foo}}
-                @{{ store_user_name.user.name}}
+                @{{ restore.user.name}}
             </h1>
+            <hr/>
+            <!-- Below this 2 lines are same two way binding works,but different method -->
+            <input type='text' v-model='coupon'/>
+            <input type='text' @keyDown="coupon = $event.target.value" :value="coupon">
+
+            <coupon v-model="coupon"></coupon>
+            <hr/>
+
         </div>
         <div id='dummy'>
             <h1>
                 @{{ foo}}
-                @{{ store_user_name.user.name }}
+                @{{ restore.user.name }}
             </h1>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>

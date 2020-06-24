@@ -6,7 +6,7 @@
 export default {
     data(){
         return{
-            message : 'hey'
+            message : 'rioooo'
         }
     }
 }
