@@ -2012,6 +2012,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2031,6 +2032,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     postedOn: function postedOn(status) {
       return moment__WEBPACK_IMPORTED_MODULE_0___default()(status.created_at).fromNow();
+    }
+  },
+  filters: {
+    ago: function ago(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).fromNow();
+    },
+    capitalize: function capitalize(value) {
+      // console.log(value)
+      return value.toUpperCase();
     }
   }
 });
@@ -24354,10 +24364,14 @@ var render = function() {
       _c("h1", [_vm._v("Home Page")]),
       _vm._v(" "),
       _vm._l(_vm.statuses, function(status) {
-        return _c("div", { key: status, staticClass: "box" }, [
+        return _c("div", { staticClass: "box" }, [
           _c("h5", { staticClass: "modal-title" }, [
             _vm._v(_vm._s(status.user.name) + "said...\n                "),
-            _c("p", [_vm._v(_vm._s(_vm.postedOn(status)))])
+            _c("p", [
+              _vm._v(
+                _vm._s(_vm._f("capitalize")(_vm._f("ago")(status.created_at)))
+              )
+            ])
           ]),
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(status.status))])
