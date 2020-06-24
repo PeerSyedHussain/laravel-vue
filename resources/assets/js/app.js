@@ -1,9 +1,13 @@
 import Vue from 'vue';
 import axios from 'axios';
+import router from './routes'
 import Form from './core/Form';
 import Example from './components/Example';
 import Notification from './components/Notification.vue'
 import Coupon from './components/Coupon.vue';
+import './bootstrap';
+import About from "./components/views/About";
+import Home from "./components/views/Home";
 
 window.axios = axios;                                       //global declaration for using in various files,to avoid import in all files
 
@@ -57,4 +61,14 @@ new Vue({
         foo : 'otherbar',                                   //for 24th episode this is declared as unique object data as foo    [it cannot share data]
         store_user_name                                     //for 24th episode this is declared as same object data as store_user_name [it can share data]
     }
+})
+
+new Vue({
+    el : '#router',
+
+    components : {
+        About,Home
+    },
+
+    router 
 })

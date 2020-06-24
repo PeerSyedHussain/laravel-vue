@@ -21,6 +21,10 @@ Route::get('skills',function(){
     return ['Javascript','React js','Vue Js','Laravel'];
 });
 
+// Route::get('/statuses',function(){
+
+// })
+
 Route::resource('/project','\\App\\Http\\Controllers\\ProjectController');
 // Route::get('/project/create','\\App\\Http\\Controllers\\ProjectController@create');
 // Route::post('/project','\\App\\Http\\Controllers\\ProjectController@store');
